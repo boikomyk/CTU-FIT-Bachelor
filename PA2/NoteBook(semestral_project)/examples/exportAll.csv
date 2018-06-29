@@ -1,0 +1,20 @@
+ID,TITLE,TYPE,CONTENT,PRICE,TAGS
+1," Day1                                       ",Shop_List,"- bread                    | 10
+- oil                      | 20
+- car                      | 320
+- something else           | 1000
+- cleaner                  | 102
+- banana                   | 150
+- nothing                  | 320
+- ffff                     | 20
+- dda                      | 100
+",2042,"tag1,tag2,favourite"
+2," MyDreamsPart1                              ",Text_Note,"Yes, its my dreams.                                   
+Want to be a good programmer.                         
+",,"here"
+3," TODO                                       ",Task_List,"* do ur homework                                      
+* pass all exams                                      
+* get best marks                                      
+* something else                                      
+* be happy                                            
+",,"immidiatly,important,necessery"
