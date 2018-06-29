@@ -1,5 +1,5 @@
 
 NoteBook Application.
 
-![alt text](screenshots/MENU.png "Main Menu")
+![alt text](screenshots/MenuMain.png "Main Menu")
 
