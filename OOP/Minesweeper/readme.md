@@ -1,6 +1,17 @@
 Documentation:                                                                                                                                       
 https://docs.google.com/document/d/1SIcJcr92aLJI_XGo7B9qcOxgMl3Uks7gZDiCP_MQJ7E/edit?usp=sharing
 
+##### Main Menu:
+![alt text](screenshots/menu.png "MainMenu")
+
+##### Options:
+![alt text](screenshots/options.png "options")
+
+##### Game Proccess:
+![alt text](screenshots/gamefootage.png "game running")
+
+
+
 ____________________________________________________________
 
 Report:                                                  
