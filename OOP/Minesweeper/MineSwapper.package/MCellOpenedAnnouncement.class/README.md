@@ -1,0 +1,1 @@
+Is sent by  "MCellModel" after the cell is opened

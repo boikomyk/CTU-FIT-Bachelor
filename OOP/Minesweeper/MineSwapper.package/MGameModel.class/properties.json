@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "MineSwapper-Model",
+	"classinstvars" : [
+		"uniqueInstance"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"board",
+		"numberOfMines",
+		"gameState",
+		"announcer",
+		"nimesLeftCountNew"
+	],
+	"name" : "MGameModel",
+	"type" : "normal"
+}

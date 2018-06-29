@@ -1,0 +1,3 @@
+accessing
+minesAroundIncrement
+	cell minesAroundIncrement 

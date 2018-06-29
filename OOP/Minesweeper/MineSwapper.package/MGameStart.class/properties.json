@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "",
+	"super" : "BlSpace",
+	"category" : "MineSwapper",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"counter",
+		"font",
+		"isLosed",
+		"isWin",
+		"space",
+		"timer",
+		"timerON"
+	],
+	"instvars" : [ ],
+	"name" : "MGameStart",
+	"type" : "normal"
+}

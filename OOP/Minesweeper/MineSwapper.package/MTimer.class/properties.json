@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "BlTextElement",
+	"category" : "MineSwapper-Elements",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"status",
+		"time_counter"
+	],
+	"name" : "MTimer",
+	"type" : "normal"
+}

@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "BlElementEventListener",
+	"category" : "MineSwapper-Elements",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"mineSwapper",
+		"timerON"
+	],
+	"name" : "MCellEventListener",
+	"type" : "normal"
+}

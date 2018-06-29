@@ -1,0 +1,3 @@
+accessing
+cellsCount
+	^ board cellsCount 

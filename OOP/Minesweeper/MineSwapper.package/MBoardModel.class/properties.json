@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "DaniilGrankin 12/11/2017 15:13",
+	"super" : "Object",
+	"category" : "MineSwapper-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"boardOfCells",
+		"height",
+		"width"
+	],
+	"name" : "MBoardModel",
+	"type" : "normal"
+}

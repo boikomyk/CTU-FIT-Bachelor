@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BrEditorElement",
+	"category" : "MineSwapper-Elements",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"text"
+	],
+	"name" : "OptionsMineCount",
+	"type" : "normal"
+}

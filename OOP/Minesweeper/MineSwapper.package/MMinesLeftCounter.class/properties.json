@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "BlTextElement",
+	"category" : "MineSwapper-Elements",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"count",
+		"element"
+	],
+	"name" : "MMinesLeftCounter",
+	"type" : "normal"
+}

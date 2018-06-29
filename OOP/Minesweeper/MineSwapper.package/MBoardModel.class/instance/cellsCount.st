@@ -1,0 +1,4 @@
+accessing
+cellsCount
+	^ height * width
+	

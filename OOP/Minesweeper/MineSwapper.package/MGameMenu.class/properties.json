@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "BlSpace",
+	"category" : "MineSwapper",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"mines",
+		"size",
+		"space"
+	],
+	"instvars" : [ ],
+	"name" : "MGameMenu",
+	"type" : "normal"
+}

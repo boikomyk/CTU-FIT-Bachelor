@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "MCellElement",
+	"category" : "MineSwapper-Elements",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"image"
+	],
+	"name" : "MCellElementMine",
+	"type" : "normal"
+}

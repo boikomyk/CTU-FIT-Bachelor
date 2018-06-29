@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "DaniilGrankin 11/30/2017 22:32",
+	"super" : "Object",
+	"category" : "MineSwapper-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"mine",
+		"opened",
+		"marked",
+		"unmarked",
+		"minesAround",
+		"announcer"
+	],
+	"name" : "MCellModel",
+	"type" : "normal"
+}

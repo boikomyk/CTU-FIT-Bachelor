@@ -1,0 +1,1 @@
+An OptionsMineCountTest is a test class for testing the behavior of OptionsMineCount
