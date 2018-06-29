@@ -1,5 +1,7 @@
 
-NoteBook Application.
+# NoteBook Application.
+## Supports the following functionality:
+
 
 ![alt text](screenshots/MenuMain.png "Main Menu")
 ![alt text](screenshots/ShopList.png "ShopList type of Note")
