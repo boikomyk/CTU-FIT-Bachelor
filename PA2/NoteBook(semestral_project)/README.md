@@ -9,5 +9,9 @@
 
 ###### Main Menu:
 ![alt text](screenshots/MenuMain.png "Main Menu")
+
+###### ShopList type of Note
 ![alt text](screenshots/ShopList.png "ShopList type of Note")
+
+###### Result of exporting notes to HTML
 ![alt text](screenshots/HTML_Export.png "Example of export")
