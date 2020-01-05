@@ -1,0 +1,10 @@
+voryx_thruway:
+  enable_logging: true
+  realm: 'realm1'
+  url: '%env(WAMP_SERVER_URL)%:%env(WAMP_TRUSTED_PORT)%'
+  trusted_url: '%env(WAMP_SERVER_URL)%:%env(WAMP_TRUSTED_PORT)%'
+  router:
+    ip: '%env(WAMP_SERVER_IP)%'
+    port: '%env(WAMP_SERVER_PORT)%'
+    trusted_port: '%env(WAMP_TRUSTED_PORT)%'
+    authentication: true

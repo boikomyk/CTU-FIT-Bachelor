@@ -1,0 +1,12 @@
+export declare const DEFAULT_PREFIX = "REDUX_WEBSOCKET";
+export declare const WEBSOCKET_BEGIN_RECONNECT = "BEGIN_RECONNECT";
+export declare const WEBSOCKET_RECONNECT_ATTEMPT = "RECONNECT_ATTEMPT";
+export declare const WEBSOCKET_RECONNECTED = "RECONNECTED";
+export declare const WEBSOCKET_BROKEN = "BROKEN";
+export declare const WEBSOCKET_CLOSED = "CLOSED";
+export declare const WEBSOCKET_ERROR = "ERROR";
+export declare const WEBSOCKET_MESSAGE = "MESSAGE";
+export declare const WEBSOCKET_OPEN = "OPEN";
+export declare const WEBSOCKET_CONNECT = "CONNECT";
+export declare const WEBSOCKET_DISCONNECT = "DISCONNECT";
+export declare const WEBSOCKET_SEND = "SEND";

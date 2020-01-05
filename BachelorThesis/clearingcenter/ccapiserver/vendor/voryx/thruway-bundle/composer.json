@@ -1,0 +1,46 @@
+{
+  "name": "voryx/thruway-bundle",
+  "type": "symfony-bundle",
+  "description": "WebSockets (WAMP2) integration for Symfony2",
+  "keywords": [
+    "WebSockets",
+    "WAMP",
+    "WAMP2",
+    "Autobahn",
+    "Sockets",
+    "Symfony"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "David Dan",
+      "email": "davidwdan@gmail.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Matt Bonneau",
+      "email": "matt@bonneau.net",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "Voryx\\ThruwayBundle": "src"
+    }
+  },
+  "require": {
+    "php": ">=5.6",
+    "symfony/finder": "^2.7|^3.0|^4.0",
+    "voryx/thruway": "~0.5",
+    "symfony/serializer": "^2.7|^3.0|^4.0",
+    "react/child-process": "~0.4",
+    "symfony/event-dispatcher": "^2.7|^3.0|^4.0",
+    "thruway/pawl-transport": "^0.5.0"
+  },
+  "require-dev": {
+    "symfony/symfony": "^2.7|^3.0|^4.0",
+    "doctrine/orm": "~2.1",
+    "symfony/yaml": "2.*",
+    "phpunit/phpunit": "~5.0"
+  }
+}

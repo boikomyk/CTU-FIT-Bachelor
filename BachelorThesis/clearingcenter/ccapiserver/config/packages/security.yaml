@@ -1,0 +1,63 @@
+security:
+  role_hierarchy:
+      ROLE_ADMIN:       ROLE_USER
+      ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+  encoders:
+    # this internal class is used by Symfony to represent in-memory users
+    App\Entity\User:
+      algorithm: bcrypt
+      cost: 12
+
+  providers:
+    # used to reload user from session & other features (e.g. switch_user)
+    app_user_provider:
+      entity:
+        # the class of the entity that represents users
+        class: App\Entity\User
+        # the property to query by - e.g. username, email, etc (one specific field)
+        property: email
+
+  # defines how your users will be able to authenticate (e.g. login form, API token, etc)
+  firewalls:
+    # The dev firewall is really a fake firewall: it just makes sure that you don't accidentally block Symfony's dev tools
+    dev:
+      # Only one firewall is active on each request: Symfony uses the pattern key to find the first match
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+
+    authentication:
+      pattern: /api/authorization$
+      anonymous: ~
+      stateless: true
+      simple_preauth:
+        authenticator: App\Security\HTTP\JSONAuthenticator
+
+#    # All api dev URLs are handled by the dev_api firewall
+#    dev_api:
+#      anonymous: true
+#      logout: ~
+#      stateless: true
+#      pattern: ^/api/signals/.*/dev
+#      security: false
+
+    # All real URLs are handled by the secured_api firewall
+    secured_api:
+      provider: app_user_provider
+      anonymous: ~
+      logout: ~
+      stateless: true
+      guard:
+        authenticators:
+        - App\Security\Guard\CsrfJwtAuthenticator
+
+#  access_control:
+#  - { path: ^/$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#  - { path: ^/(login|register), roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#  - { path: ^/(css|js|index), roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#  - { path: ^/(_wdt|_profiler), roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#  - { path: api/authorizations, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#  - { path: ^/$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+
+#    requires_channel: https
+

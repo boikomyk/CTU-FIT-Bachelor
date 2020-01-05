@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta content=’width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0′ name=’viewport’ />
+    {% block head %}
+        <link rel="icon" href="{{ asset('images/favicon.ico') }}">
+        <link rel="stylesheet" href="{{ asset('vendors~bundle.css') }}"> 
+        <link rel="stylesheet" href="{{ asset('bundle.css') }}" >
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+    <div id="root"></div>
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('runtime~bundle.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('vendors~bundle.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundle.js') }}"></script>
+{% endblock %}
+</body>
+</html>

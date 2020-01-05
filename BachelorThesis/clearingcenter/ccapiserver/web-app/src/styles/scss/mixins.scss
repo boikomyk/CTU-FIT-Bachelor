@@ -1,0 +1,1075 @@
+@mixin sidebar-background-color($background-color, $font-color) {
+  .nav {
+    li {
+      > a {
+        color: $font-color;
+      }
+      i {
+        color: rgba($font-color, 0.8);
+      }
+
+      &.active,
+      &:hover {
+        > [data-toggle="collapse"] {
+          color: $font-color;
+
+          i {
+            color: rgba($font-color, 0.8);
+          }
+        }
+      }
+    }
+  }
+  .user {
+    a {
+      color: $font-color;
+    }
+  }
+  .simple-text {
+    color: $font-color;
+  }
+  .sidebar-background:after {
+    background: $background-color;
+    opacity: 0.8;
+  }
+}
+
+@mixin sidebar-active-color($font-color) {
+  .nav {
+    li {
+      &.active > a:not([data-toggle="collapse"]) {
+        color: $font-color;
+        opacity: 1;
+        @include shadow-big-color($font-color);
+
+        i {
+          color: rgba($font-color, 0.8);
+        }
+      }
+    }
+  }
+}
+
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select;
+  user-select: $select;
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+  -moz-box-sizing: $boxmodel;
+  box-sizing: $boxmodel;
+}
+
+@mixin transition($time, $type) {
+  -webkit-transition: all $time $type;
+  -moz-transition: all $time $type;
+  -o-transition: all $time $type;
+  -ms-transition: all $time $type;
+  transition: all $time $type;
+}
+
+@mixin transform-scale($value) {
+  -webkit-transform: scale($value);
+  -moz-transform: scale($value);
+  -o-transform: scale($value);
+  -ms-transform: scale($value);
+  transform: scale($value);
+}
+
+@mixin transform-translate-x($value) {
+  -webkit-transform: translate3d($value, 0, 0);
+  -moz-transform: translate3d($value, 0, 0);
+  -o-transform: translate3d($value, 0, 0);
+  -ms-transform: translate3d($value, 0, 0);
+  transform: translate3d($value, 0, 0);
+}
+
+@mixin transform-translate-y($value) {
+  -webkit-transform: translate3d(0, $value, 0);
+  -moz-transform: translate3d(0, $value, 0);
+  -o-transform: translate3d(0, $value, 0);
+  -ms-transform: translate3d(0, $value, 0);
+  transform: translate3d(0, $value, 0);
+}
+
+@mixin transform-origin($coordinates) {
+  -webkit-transform-origin: $coordinates;
+  -moz-transform-origin: $coordinates;
+  -o-transform-origin: $coordinates;
+  -ms-transform-origin: $coordinates;
+  transform-origin: $coordinates;
+}
+
+@mixin radial-gradient($extern-color, $center-color) {
+  background: $extern-color;
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    $center-color 0%,
+    $extern-color 100%
+  ); /* FF3.6+ */
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(0%, $center-color),
+    color-stop(100%, $extern-color)
+  ); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    $center-color 0%,
+    $extern-color 100%
+  ); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    $center-color 0%,
+    $extern-color 100%
+  ); /* Opera 12+ */
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    $center-color 0%,
+    $extern-color 100%
+  ); /* IE10+ */
+  background: radial-gradient(
+    ellipse at center,
+    $center-color 0%,
+    $extern-color 100%
+  ); /* W3C */
+  background-size: 550% 450%;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin rotate-180() {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+@mixin bar-animation($type) {
+  -webkit-animation: $type 500ms linear 0s;
+  -moz-animation: $type 500ms linear 0s;
+  animation: $type 500ms 0s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@mixin topbar-x-rotation() {
+  @keyframes topbar-x {
+    0% {
+      top: 0;
+      transform: rotate(0deg);
+    }
+    45% {
+      top: 6px;
+      transform: rotate(145deg);
+    }
+    75% {
+      transform: rotate(130deg);
+    }
+    100% {
+      transform: rotate(135deg);
+    }
+  }
+  @-webkit-keyframes topbar-x {
+    0% {
+      top: 0;
+      -webkit-transform: rotate(0deg);
+    }
+    45% {
+      top: 6px;
+      -webkit-transform: rotate(145deg);
+    }
+    75% {
+      -webkit-transform: rotate(130deg);
+    }
+    100% {
+      -webkit-transform: rotate(135deg);
+    }
+  }
+  @-moz-keyframes topbar-x {
+    0% {
+      top: 0;
+      -moz-transform: rotate(0deg);
+    }
+    45% {
+      top: 6px;
+      -moz-transform: rotate(145deg);
+    }
+    75% {
+      -moz-transform: rotate(130deg);
+    }
+    100% {
+      -moz-transform: rotate(135deg);
+    }
+  }
+}
+
+@mixin topbar-back-rotation() {
+  @keyframes topbar-back {
+    0% {
+      top: 6px;
+      transform: rotate(135deg);
+    }
+    45% {
+      transform: rotate(-10deg);
+    }
+    75% {
+      transform: rotate(5deg);
+    }
+    100% {
+      top: 0;
+      transform: rotate(0);
+    }
+  }
+
+  @-webkit-keyframes topbar-back {
+    0% {
+      top: 6px;
+      -webkit-transform: rotate(135deg);
+    }
+    45% {
+      -webkit-transform: rotate(-10deg);
+    }
+    75% {
+      -webkit-transform: rotate(5deg);
+    }
+    100% {
+      top: 0;
+      -webkit-transform: rotate(0);
+    }
+  }
+
+  @-moz-keyframes topbar-back {
+    0% {
+      top: 6px;
+      -moz-transform: rotate(135deg);
+    }
+    45% {
+      -moz-transform: rotate(-10deg);
+    }
+    75% {
+      -moz-transform: rotate(5deg);
+    }
+    100% {
+      top: 0;
+      -moz-transform: rotate(0);
+    }
+  }
+}
+
+@mixin bottombar-x-rotation() {
+  @keyframes bottombar-x {
+    0% {
+      bottom: 0;
+      transform: rotate(0deg);
+    }
+    45% {
+      bottom: 6px;
+      transform: rotate(-145deg);
+    }
+    75% {
+      transform: rotate(-130deg);
+    }
+    100% {
+      transform: rotate(-135deg);
+    }
+  }
+  @-webkit-keyframes bottombar-x {
+    0% {
+      bottom: 0;
+      -webkit-transform: rotate(0deg);
+    }
+    45% {
+      bottom: 6px;
+      -webkit-transform: rotate(-145deg);
+    }
+    75% {
+      -webkit-transform: rotate(-130deg);
+    }
+    100% {
+      -webkit-transform: rotate(-135deg);
+    }
+  }
+  @-moz-keyframes bottombar-x {
+    0% {
+      bottom: 0;
+      -moz-transform: rotate(0deg);
+    }
+    45% {
+      bottom: 6px;
+      -moz-transform: rotate(-145deg);
+    }
+    75% {
+      -moz-transform: rotate(-130deg);
+    }
+    100% {
+      -moz-transform: rotate(-135deg);
+    }
+  }
+}
+
+@mixin bottombar-back-rotation {
+  @keyframes bottombar-back {
+    0% {
+      bottom: 6px;
+      transform: rotate(-135deg);
+    }
+    45% {
+      transform: rotate(10deg);
+    }
+    75% {
+      transform: rotate(-5deg);
+    }
+    100% {
+      bottom: 0;
+      transform: rotate(0);
+    }
+  }
+  @-webkit-keyframes bottombar-back {
+    0% {
+      bottom: 6px;
+      -webkit-transform: rotate(-135deg);
+    }
+    45% {
+      -webkit-transform: rotate(10deg);
+    }
+    75% {
+      -webkit-transform: rotate(-5deg);
+    }
+    100% {
+      bottom: 0;
+      -webkit-transform: rotate(0);
+    }
+  }
+  @-moz-keyframes bottombar-back {
+    0% {
+      bottom: 6px;
+      -moz-transform: rotate(-135deg);
+    }
+    45% {
+      -moz-transform: rotate(10deg);
+    }
+    75% {
+      -moz-transform: rotate(-5deg);
+    }
+    100% {
+      bottom: 0;
+      -moz-transform: rotate(0);
+    }
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: ($opacity * 100);
+  filter: #{alpha(opacity=$opacity-ie)};
+}
+
+@mixin black-filter($opacity) {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(17, 17, 17, $opacity);
+  display: block;
+  content: "";
+  z-index: 1;
+}
+
+@mixin material-placeholder() {
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin variations($component, $selector-suffix, $mdb-param-1, $color-default) {
+  @include generic-variations(
+    $component,
+    $selector-suffix,
+    $color-default,
+    "variations-content",
+    $mdb-param-1
+  );
+}
+
+@mixin variations-content($args) {
+  #{map-get($args, material-param-1)}: map-get($args, variation-color);
+}
+
+@mixin background-variations($component, $selector-suffix, $color-default) {
+  @include generic-variations(
+    $component,
+    $selector-suffix,
+    $color-default,
+    "background-variations-content",
+    null
+  );
+}
+
+@mixin background-variations-content($args) {
+  background-color: map-get($args, variation-color);
+  @if (map-get($args, variation-color) == $mdb-btn-background-color) {
+    color: $mdb-text-color-primary;
+  } @else {
+    color: map-get($args, variation-color-text);
+  }
+}
+
+@mixin button-variations($component, $selector-suffix, $color-default) {
+  @include generic-variations(
+    $component,
+    $selector-suffix,
+    $color-default,
+    "button-variations-content",
+    4%
+  );
+}
+
+//noinspection ALL
+@mixin button-variations-content($args) {
+  $variation-color: map-get($args, variation-color);
+  $mdb-param-1: map-get($args, material-param-1);
+  background-color: contrast-color(
+    $variation-color,
+    darken($variation-color, $mdb-param-1),
+    lighten($variation-color, $mdb-param-1)
+  );
+}
+
+@mixin navbar-variations($component, $selector-suffix, $color-default) {
+  @include generic-variations(
+    $component,
+    $selector-suffix,
+    $color-default,
+    "navbar-variations-content",
+    null
+  );
+}
+
+@mixin navbar-variations-content($args) {
+  $variation-color: map-get($args, variation-color);
+  $variation-color-text: map-get($args, variation-color-text);
+
+  background-color: $variation-color;
+  color: $variation-color-text;
+  .navbar-form .form-group input.form-control,
+  .navbar-form input.form-control {
+    @include material-placeholder {
+      color: $variation-color-text;
+    }
+  }
+  .dropdown-menu {
+    border-radius: $border-radius-base !important;
+    li > a {
+      &:hover,
+      &:focus {
+        color: $white-color;
+        background-color: $variation-color;
+        @include shadow-big-color($variation-color);
+      }
+    }
+
+    .active > a {
+      &:hover,
+      &:focus {
+        color: $variation-color-text;
+      }
+      background-color: $variation-color;
+      color: $variation-color-text;
+      @include shadow-big-color($variation-color);
+    }
+  }
+}
+
+@mixin alert-variations($component, $selector-suffix, $color-default) {
+  @include generic-variations(
+    $component,
+    $selector-suffix,
+    $color-default,
+    "alert-variations-content",
+    null
+  );
+}
+
+@mixin alert-variations-content($args) {
+  $variation-color: map-get($args, variation-color);
+  $variation-color-text: map-get($args, variation-color-text);
+
+  @if $variation-color == $brand-info {
+    background-color: $variation-color;
+  } @else {
+    background-color: lighten($variation-color, 5%);
+  }
+  color: $variation-color-text;
+  border-radius: $border-radius-base;
+
+  @include shadow-big-color($variation-color);
+
+  a,
+  .alert-link {
+    color: $variation-color-text;
+  }
+}
+
+@mixin call-variations-content-mixin($args) {
+  $mixin-name: map-get($args, mixin-name);
+  @if $mixin-name == variations-content {
+    @include variations-content($args);
+  } @else if $mixin-name == background-variations-content {
+    @include background-variations-content($args);
+  } @else if $mixin-name == text-variations-content {
+    @include text-variations-content($args);
+  } @else if $mixin-name == button-variations-content {
+    @include button-variations-content($args);
+  } @else if $mixin-name == bg-color-variations-content {
+    @include bg-color-variations-content($args);
+  } @else if $mixin-name == bg-box-shadow-variations-content {
+    @include bg-box-shadow-variations-content($args);
+  } @else if $mixin-name == bg-img-variations-content {
+    @include bg-img-variations-content($args);
+  } @else if $mixin-name == navbar-variations-content {
+    @include navbar-variations-content($args);
+  } @else if $mixin-name == alert-variations-content {
+    @include alert-variations-content($args);
+  } @else {
+    @error "Unknown mixin: #{$mixin-name}";
+  }
+}
+
+@mixin generic-variations(
+  $component,
+  $selector-suffix,
+  $color-default,
+  $mixin-name,
+  $mdb-param-1
+) {
+  $args: (
+    mixin-name: $mixin-name,
+    material-param-1: $mdb-param-1
+  );
+
+  &#{$selector-suffix},
+  &#{$component}-default#{$selector-suffix} {
+    $args-extra: map-merge(
+      $args,
+      (
+        variation-color: $white-color,
+        variation-color-text: $gray
+      )
+    );
+    @include call-variations-content-mixin($args-extra);
+  }
+  &#{$component}-inverse#{$selector-suffix} {
+    $args-inverse: map-merge(
+      $args,
+      (
+        variation-color: #212121,
+        variation-color-text: #fff
+      )
+    );
+    @include call-variations-content-mixin($args-inverse);
+  }
+  &#{$component}-primary#{$selector-suffix} {
+    $args-primary: map-merge(
+      $args,
+      (
+        variation-color: $brand-primary,
+        variation-color-text: $mdb-text-color-light
+      )
+    );
+    @include call-variations-content-mixin($args-primary);
+  }
+  &#{$component}-success#{$selector-suffix} {
+    $args-success: map-merge(
+      $args,
+      (
+        variation-color: $brand-success,
+        variation-color-text: $mdb-text-color-light
+      )
+    );
+    @include call-variations-content-mixin($args-success);
+  }
+  &#{$component}-info#{$selector-suffix} {
+    $args-info: map-merge(
+      $args,
+      (
+        variation-color: $brand-info,
+        variation-color-text: $mdb-text-color-light
+      )
+    );
+    @include call-variations-content-mixin($args-info);
+  }
+  &#{$component}-warning#{$selector-suffix} {
+    $args-warning: map-merge(
+      $args,
+      (
+        variation-color: $brand-warning,
+        variation-color-text: $mdb-text-color-light
+      )
+    );
+    @include call-variations-content-mixin($args-warning);
+  }
+  &#{$component}-danger#{$selector-suffix} {
+    $args-danger: map-merge(
+      $args,
+      (
+        variation-color: $brand-danger,
+        variation-color-text: $mdb-text-color-light
+      )
+    );
+    @include call-variations-content-mixin($args-danger);
+  }
+
+  &#{$component}-rose#{$selector-suffix} {
+    $args-rose: map-merge(
+      $args,
+      (
+        variation-color: $brand-rose,
+        variation-color-text: $mdb-text-color-light
+      )
+    );
+    @include call-variations-content-mixin($args-rose);
+  }
+}
+
+@mixin transition($time, $type) {
+  -webkit-transition: all $time $type;
+  -moz-transition: all $time $type;
+  -o-transition: all $time $type;
+  -ms-transition: all $time $type;
+  transition: all $time $type;
+}
+
+@mixin transform-scale($value) {
+  -webkit-transform: scale($value);
+  -moz-transform: scale($value);
+  -o-transform: scale($value);
+  -ms-transform: scale($value);
+  transform: scale($value);
+}
+
+@mixin transform-translate-x($value) {
+  -webkit-transform: translate3d($value, 0, 0);
+  -moz-transform: translate3d($value, 0, 0);
+  -o-transform: translate3d($value, 0, 0);
+  -ms-transform: translate3d($value, 0, 0);
+  transform: translate3d($value, 0, 0);
+}
+
+@mixin transform-translate-y($value) {
+  -webkit-transform: translate3d(0, $value, 0);
+  -moz-transform: translate3d(0, $value, 0);
+  -o-transform: translate3d(0, $value, 0);
+  -ms-transform: translate3d(0, $value, 0);
+  transform: translate3d(0, $value, 0);
+}
+
+@mixin transform-origin($coordinates) {
+  -webkit-transform-origin: $coordinates;
+  -moz-transform-origin: $coordinates;
+  -o-transform-origin: $coordinates;
+  -ms-transform-origin: $coordinates;
+  transform-origin: $coordinates;
+}
+
+@mixin black-filter() {
+  background: rgba(0, 0, 0, 0.55);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  z-index: 0;
+  left: 0;
+  top: 0;
+}
+
+@mixin radial-gradient($extern-color, $center-color) {
+  background: $extern-color;
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    $center-color 0%,
+    $extern-color 100%
+  ); /* FF3.6+ */
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(0%, $center-color),
+    color-stop(100%, $extern-color)
+  ); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    $center-color 0%,
+    $extern-color 100%
+  ); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    $center-color 0%,
+    $extern-color 100%
+  ); /* Opera 12+ */
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    $center-color 0%,
+    $extern-color 100%
+  ); /* IE10+ */
+  background: radial-gradient(
+    ellipse at center,
+    $center-color 0%,
+    $extern-color 100%
+  ); /* W3C */
+  background-size: 550% 450%;
+}
+
+@mixin tag-color($color) {
+  background-color: $color;
+  color: $white-color;
+}
+
+@mixin create-colored-tags() {
+  &.tag-primary {
+    @include tag-color($brand-primary);
+  }
+  &.tag-info {
+    @include tag-color($brand-info);
+  }
+  &.tag-success {
+    @include tag-color($brand-success);
+  }
+  &.tag-warning {
+    @include tag-color($brand-warning);
+  }
+  &.tag-danger {
+    @include tag-color($brand-danger);
+  }
+  &.tag-rose {
+    @include tag-color($brand-rose);
+  }
+}
+
+@mixin rotate-180() {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+@mixin linear-gradient($color1, $color2) {
+  background: $color1; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(
+    60deg,
+    $color1,
+    $color2
+  ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(
+    60deg,
+    $color1,
+    $color2
+  ); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(
+    60deg,
+    $color1,
+    $color2
+  ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(60deg, $color1, $color2); /* Standard syntax */
+}
+
+@mixin set-background-color-button($color) {
+  li.active > a {
+    background-color: $color;
+    @include shadow-big-color($color);
+  }
+}
+
+@mixin btn-styles($btn-color) {
+  @include shadow-2dp-color($btn-color);
+
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  &:active:focus,
+  &:active:hover,
+  &.active:focus,
+  &.active:hover,
+  .open > &.dropdown-toggle,
+  .open > &.dropdown-toggle:focus,
+  .open > &.dropdown-toggle:hover {
+    background-color: $btn-color;
+    color: $white-color;
+  }
+
+  &:focus,
+  &:active,
+  &:hover {
+    @include button-shadow-color($btn-color);
+  }
+
+  &.disabled,
+  &:disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      box-shadow: none;
+    }
+  }
+
+  &.btn-simple {
+    background-color: transparent;
+    color: $btn-color;
+    box-shadow: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+      color: $btn-color;
+    }
+  }
+}
+
+@mixin social-buttons-color($color) {
+  background-color: $color;
+  color: #fff;
+  @include shadow-2dp-color($color);
+
+  &:focus,
+  &:active,
+  &:hover {
+    background-color: $color;
+    color: #fff;
+    @include button-shadow-color($color);
+  }
+
+  &.btn-simple {
+    color: $color;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+@mixin set-wizard-color($color) {
+  .moving-tab {
+    background-color: $color;
+    @include shadow-big-color($color);
+  }
+
+  .picture {
+    &:hover {
+      border-color: $color;
+    }
+  }
+
+  .choice {
+    &:hover,
+    &.active {
+      .icon {
+        border-color: $color;
+        color: $color;
+      }
+    }
+  }
+
+  .form-group {
+    .form-control {
+      background-image: linear-gradient($color, $color),
+        linear-gradient($mdb-input-underline-color, $mdb-input-underline-color);
+    }
+  }
+
+  .checkbox input[type="checkbox"]:checked + .checkbox-material {
+    .check {
+      background-color: $color;
+    }
+  }
+
+  .radio input[type="radio"]:checked ~ .check {
+    background-color: $color;
+  }
+
+  .radio input[type="radio"]:checked ~ .circle {
+    border-color: $color;
+  }
+}
+
+@mixin lock-page-input-color($color) {
+  &.lock-page {
+    .form-group {
+      .form-control {
+        background-image: linear-gradient($color, $color),
+          linear-gradient(
+            $mdb-input-underline-color,
+            $mdb-input-underline-color
+          );
+      }
+    }
+  }
+}
+
+@mixin alert-icon-color($color) {
+  i {
+    color: $color;
+  }
+}
+
+@mixin timeline-badge-color($color) {
+  background-color: $color;
+  @include shadow-big-color($color);
+}
+@mixin shadow-z-1() {
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+}
+
+@mixin shadow-z-1-hover() {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+@mixin shadow-z-2() {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@mixin shadow-z-3() {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+@mixin shadow-z-4() {
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22),
+    0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+
+@mixin shadow-z-5() {
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2),
+    0 40px 77px 0 rgba(0, 0, 0, 0.22);
+}
+
+@mixin big-shadow() {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
+}
+
+@mixin button-shadow-color($color) {
+  box-shadow: 0 14px 26px -12px rgba($color, $mdb-shadow-key-penumbra-opacity *
+          3),
+    0 4px 23px 0px rgba(0, 0, 0, $mdb-shadow-ambient-shadow-opacity),
+    0 8px 10px -5px rgba($color, $mdb-shadow-key-umbra-opacity);
+}
+
+@mixin shadow-2dp() {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, $mdb-shadow-key-penumbra-opacity),
+    0 3px 1px -2px rgba(0, 0, 0, $mdb-shadow-key-umbra-opacity),
+    0 1px 5px 0 rgba(0, 0, 0, $mdb-shadow-ambient-shadow-opacity);
+}
+@mixin shadow-2dp-color($color) {
+  box-shadow: 0 2px 2px 0 rgba($color, $mdb-shadow-key-penumbra-opacity),
+    0 3px 1px -2px rgba($color, $mdb-shadow-key-umbra-opacity),
+    0 1px 5px 0 rgba($color, $mdb-shadow-ambient-shadow-opacity);
+}
+
+@mixin shadow-3dp() {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, $mdb-shadow-key-penumbra-opacity),
+    0 3px 3px -2px rgba(0, 0, 0, $mdb-shadow-key-umbra-opacity),
+    0 1px 8px 0 rgba(0, 0, 0, $mdb-shadow-ambient-shadow-opacity);
+}
+@mixin shadow-4dp() {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, $mdb-shadow-key-penumbra-opacity),
+    0 1px 10px 0 rgba(0, 0, 0, $mdb-shadow-ambient-shadow-opacity),
+    0 2px 4px -1px rgba(0, 0, 0, $mdb-shadow-key-umbra-opacity);
+}
+@mixin shadow-4dp-color($color) {
+  box-shadow: 0 4px 5px 0 rgba($color, $mdb-shadow-key-penumbra-opacity),
+    0 1px 10px 0 rgba($color, $mdb-shadow-ambient-shadow-opacity),
+    0 2px 4px -1px rgba($color, $mdb-shadow-key-umbra-opacity);
+}
+@mixin shadow-6dp() {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, $mdb-shadow-key-penumbra-opacity),
+    0 1px 18px 0 rgba(0, 0, 0, $mdb-shadow-ambient-shadow-opacity),
+    0 3px 5px -1px rgba(0, 0, 0, $mdb-shadow-key-umbra-opacity);
+}
+@mixin shadow-8dp() {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, $mdb-shadow-key-penumbra-opacity),
+    0 3px 14px 2px rgba(0, 0, 0, $mdb-shadow-ambient-shadow-opacity),
+    0 5px 5px -3px rgba(0, 0, 0, $mdb-shadow-key-umbra-opacity);
+}
+@mixin shadow-8dp-color($color) {
+  box-shadow: 0 8px 10px 1px rgba($color, $mdb-shadow-key-penumbra-opacity),
+    0 3px 14px 2px rgba(0, 0, 0, $mdb-shadow-ambient-shadow-opacity),
+    0 5px 5px -3px rgba($color, $mdb-shadow-key-umbra-opacity);
+}
+
+//noinspection ALL
+@mixin shadow-16dp() {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, $mdb-shadow-key-penumbra-opacity),
+    0 6px 30px 5px rgba(0, 0, 0, $mdb-shadow-ambient-shadow-opacity),
+    0 8px 10px -5px rgba(0, 0, 0, $mdb-shadow-key-umbra-opacity);
+}
+
+@mixin shadow-16dp-color($color) {
+  box-shadow: 0 16px 24px 2px rgba($color, $mdb-shadow-key-penumbra-opacity),
+    0 6px 30px 5px rgba(0, 0, 0, $mdb-shadow-ambient-shadow-opacity),
+    0 8px 10px -5px rgba($color, $mdb-shadow-key-umbra-opacity);
+}
+
+@mixin shadow-24dp() {
+  box-shadow: 0 9px 46px 8px rgba(0, 0, 0, $mdb-shadow-key-penumbra-opacity),
+    0 11px 15px -7px rgba(0, 0, 0, $mdb-shadow-ambient-shadow-opacity),
+    0 24px 38px 3px rgba(0, 0, 0, $mdb-shadow-key-umbra-opacity);
+}
+
+@mixin shadow-big() {
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, $mdb-shadow-key-penumbra-opacity *
+          3),
+    0 4px 25px 0px rgba(0, 0, 0, $mdb-shadow-ambient-shadow-opacity),
+    0 8px 10px -5px rgba(0, 0, 0, $mdb-shadow-key-umbra-opacity);
+}
+
+@mixin shadow-big-navbar() {
+  box-shadow: 0 10px 20px -12px rgba(0, 0, 0, $mdb-shadow-key-penumbra-opacity *
+          3),
+    0 3px 20px 0px rgba(0, 0, 0, $mdb-shadow-ambient-shadow-opacity),
+    0 8px 10px -5px rgba(0, 0, 0, $mdb-shadow-key-umbra-opacity);
+}
+
+@mixin shadow-big-color($color) {
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
+    0 7px 10px -5px rgba($color, 0.4);
+}

@@ -1,0 +1,13 @@
+{
+  "signal": {
+    "timestamp": "2019-04-21T01:00:00.000Z",
+    "exchange": "Binance",
+    "currency": "BTC",
+    "coin": "ETH",
+    "buy_start": "0.03544",
+    "buy_end": "0.03549",
+    "type": "LONG",
+    "action": "SELL",
+    "ask": "0.03545"
+  }
+}
