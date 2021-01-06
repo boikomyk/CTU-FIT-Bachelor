@@ -8,7 +8,7 @@
     "@giantmachines/redux-websocket": "^1.1.1",
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "connected-react-router": "^6.4.0",
     "d3": "^5.9.2",
